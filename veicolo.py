@@ -16,7 +16,7 @@ listaCilindrate = []
 class Veicolo:
     def __init__(self, targa : str):   #L’unica informazione obbligatoria è la targa,
         """
-        inizializza la funzion
+        inizializza la funzione
         """
         
         #la targa deve essere della forma AB 123 CD (dove al posto delle ABCD ci va una qualunque lettera maiuscola dell’alfabeto e al posto di 123 ci va una qualunque sequenza numerica di 3 cifre).

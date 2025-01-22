@@ -27,11 +27,11 @@ class Veicolo:
         
         #la targa deve essere della forma AB 123 CD (dove al posto delle ABCD ci va una qualunque lettera maiuscola dell’alfabeto e al posto di 123 ci va una qualunque sequenza numerica di 3 cifre).
         if len(targa) != 7:
-            raise ValueError("£Che cavolo di targa hai messo?")
+            raise ValueError("impossibile, targa non accettabile!")
         if targa[0] in alfabetoMaiuscolo and targa[1] in alfabetoMaiuscolo and targa[5] in alfabetoMaiuscolo and targa[6] in alfabetoMaiuscolo and targa[2] in cifre and targa[3] in cifre and targa[4] in cifre:
             self.__targa = targa
         else:
-            raise ValueError("Targa fatta male")
+            raise ValueError("Targa fatta male, controllala!")
         
     @property
     def targa(self):

@@ -43,8 +43,8 @@ class Moto(Veicolo):
         """
         if numero <= 0 or numero > self.__numeroMaxPasseggeri:
             raise ValueError("ci deve essere un errore, controlla meglio il numero di persone presenti nel veicolo")
-            self.__numeroPersoneTrasportate = numero
-            return
+        self.__numeroPersoneTrasportate = numero
+        return
         
     #ritorna una stringa  con le variabili
     def __str__(self):
@@ -54,5 +54,14 @@ class Moto(Veicolo):
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
 #-------------------------------------------------------------------------------
+if __name__ == "__main__":
+    moto = Moto("CF235UG")
+    print(moto)
+    
+    moto.numeroMaxPasseggeri = 1
+    print("numero massimo di passeggeri:", moto.numeroMaxPasseggeri)
+    
+    moto.numeroPersoneTrasportate = 1
+    print("numero di persone trasportate:", moto.numeroPersoneTrasportate)
     
     

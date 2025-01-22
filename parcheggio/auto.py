@@ -43,8 +43,8 @@ class Auto(Veicolo):
         """
         if numero <= 0 or numero > self.__numeroMaxPasseggeri:
             raise ValueError("ci deve essere un errore, controlla meglio il numero di persone presenti nel veicolo")
-            self.__numeroPersoneTrasportate = numero
-            return
+        self.__numeroPersoneTrasportate = numero
+        return
         
     #ritorna una stringa  con le variabili
     def __str__(self):
@@ -54,14 +54,14 @@ class Auto(Veicolo):
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
 #---------------------------------------------------------------------------------------------------------
-# if __name__ == "__main__":
-#     auto1 = Auto("AC123DF")
-#     print(auto1)
-#     
-#     numeroMax = 2
-#     print("numero massimo di passeggeri:", auto1.numeroMaxPasseggeri(numeroMax))
-#     
-#     numeroP= 5
-#     print("numero di persone trasportate:", auto1.numeroPersoneTrasportate(numeroP))
+if __name__ == "__main__":
+    auto1 = Auto("AC123DF")
+    print(auto1)
+    
+    auto1.numeroMaxPasseggeri = 2
+    print("numero massimo di passeggeri:", auto1.numeroMaxPasseggeri)
+    
+    auto1.numeroPersoneTrasportate= 1
+    print("numero di persone trasportate:", auto1.numeroPersoneTrasportate)
         
 

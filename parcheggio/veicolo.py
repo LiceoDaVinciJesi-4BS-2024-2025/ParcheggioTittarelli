@@ -103,6 +103,10 @@ class Veicolo:
 #in modo da renderli ordinabili alfabeticamente per marca, modello e numericamente (dal più piccolo al più grande) per cilindrata
  
     def __lt__(self, other):
+        """
+        aggiungo un ordinamento implicito fra gli oggetti di tipo veicolo in modo da renderli
+        ordinabili alfabeticamente per marca, modello e numericamente
+        """
         if self.__marca < other.__marca:
             return True
         elif self.__marca == other.__marca:
@@ -119,6 +123,3 @@ if __name__ == "__main__":
     
     #veicolo2 = Veicolo("C41236D")
     #print(veicolo2)
-    
-
-    

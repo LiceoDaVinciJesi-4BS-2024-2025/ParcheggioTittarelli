@@ -16,13 +16,13 @@ class PostoMezzo:
         self.__targaPresente = targaPresente
         self.__dataTermineOccupazione = dataTermineOccupazione
    
-        #controlla la targa
-        if len(targaPresente) != 7:
-            raise ValueError("impossibile, targa non accettabile!")
-        if targaPresente[0] in alfabetoMaiuscolo and targaPresente[1] in alfabetoMaiuscolo and targaPresente[5] in alfabetoMaiuscolo and targaPresente[6] in alfabetoMaiuscolo and targaPresente[2] in cifre and targaPresente[3] in cifre and targaPresente[4] in cifre:
-            self.__targaPresente= targaPresente
-        else:
-            raise ValueError("Targa fatta male, controllala!")
+#         #controlla la targa
+#         if len(targaPresente) != 7:
+#             raise ValueError("impossibile, targa non accettabile!")
+#         if targaPresente[0] in alfabetoMaiuscolo and targaPresente[1] in alfabetoMaiuscolo and targaPresente[5] in alfabetoMaiuscolo and targaPresente[6] in alfabetoMaiuscolo and targaPresente[2] in cifre and targaPresente[3] in cifre and targaPresente[4] in cifre:
+#             self.__targaPresente= targaPresente
+#         else:
+#             raise ValueError("Targa fatta male, controllala!")
     
     @property
     def targaPresente(self):
@@ -41,11 +41,12 @@ class PostoMezzo:
         return __class__.__name__ + str(self.__dict__)
     
     def parcheggio(self, targaDaInserire : str):
-        if targaDaInserire == self.__targaPresente:
-            print("il posto è occupato da :", self.__targaPresente, "è termina alle:",  self.__dataTermineOccupazione)
-        else:
-            print("posto libero")
-        return
+        """
+        dice se il parcheggio è libero o meno
+        """
+        if self.__targaPresente != "":
+            return "il posto è occupato da :", self.__targaPresente, "è termina alle:",  self.__dataTermineOccupazione
+        return "posto libero"
 #---------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     #
@@ -56,8 +57,10 @@ if __name__ == "__main__":
 
     #
     targaDaInserire1 = "WE456RE"
+    print("la targa da inserire è:", targaDaInserire1)
     print(postomezzo1.parcheggio(targaDaInserire1))
     #
     targaDaInserire2 = "WE456WE"
+    print("la targa da inserire è:", targaPresente)
     print(postomezzo1.parcheggio(targaDaInserire2))
     

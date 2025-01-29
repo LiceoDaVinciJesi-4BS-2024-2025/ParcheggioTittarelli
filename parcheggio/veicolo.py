@@ -15,7 +15,7 @@ listaCilindrate = []
 
 #Definisco la classe Veicolo, contenente le seguenti informazioni: marca, modello, colore, cilindrata(int), alimentazione, targa.
 class Veicolo:
-    def __init__(self, targa : str):   #L’unica informazione obbligatoria è la targa,
+    def __init__(self, targa : str):   #L’unica informazione obbligatoria è la targa
         """
         inizializza la funzione
         """

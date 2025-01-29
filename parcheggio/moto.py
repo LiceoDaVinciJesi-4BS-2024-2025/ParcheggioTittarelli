@@ -13,10 +13,6 @@ class Moto(Veicolo):
         inizializza la funzione
         """
         super().__init__(targa)
-        
-    @property
-    def targa(self):
-        return self.__targa
     
     @property
     def numeroMaxPasseggeri(self):

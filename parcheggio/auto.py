@@ -15,10 +15,6 @@ class Auto(Veicolo):
         super().__init__(targa)
        
     @property
-    def targa(self):
-        return self.__targa
-    
-    @property
     def numeroMaxPasseggeri(self):
         return self.__numeroMaxPasseggeri
     

@@ -8,6 +8,7 @@ from postomezzo import *
 from veicolo import *
 from auto import *
 from moto import *
+import datetime
 
 class Parcheggio:
     def __init__(self): #Un parcheggio può contenere fino a 1000 auto, 200 moto
@@ -49,7 +50,7 @@ class Parcheggio:
             if len(self.__moto) >= self.MAX_MOTO:
                 return False #posto già occupato
             
-            posto = PoatoMezzo( mezzo.targa, datetime.datetime.now())
+            posto = PostoMezzo( mezzo.targa, datetime.datetime.now())
             self.__moto.append(posto)
             return True
         
@@ -69,8 +70,6 @@ class Parcheggio:
                     self.__moto.remove(posto)
                     return True
  
-        
-        
 #Definire un sistema di prenotazione per i posteggi dei veicoli in modo tale che:
 # • si possa sapere in ogni istante quanti posti sono liberi per ogni tipo di veicolo
 # • al momento dell’arrivo del veicolo si possa prenotare un posto indicando il tipo di veicolo,
@@ -88,13 +87,15 @@ class Parcheggio:
 
 #--------------------------------------------------------------------------------
 if __name__ == "__main__":
-    mezzo1 = Veicolo("AS123DE")
-    print(mezzo1.parcheggiaVeicolo("AB123CD"))
+    #creo un parcheggio
+    parcheggio = Parcheggio()
+    print(parcheggio)
+    mezzo1 = Auto("ER456YH")
+    print(parcheggio.parcheggiaVeicolo(mezzo1))
+    mezzo2 = Moto("TY765UH")
+    print(parcheggio.parcheggiaVeicolo(mezzo2))
+    print(parcheggio.rimuoviVeicolo(mezzo1))
+    print(parcheggio)
     
-    mezzo2 = Parcheggio()
-    print(mezzo2.parcheggiaVeicolo("AO987LM"))
-    
-    mezzo3 = Parcheggio()
-    print(mezzo3.rimuoviVeicolo("TW678OK"))
     
     

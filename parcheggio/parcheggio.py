@@ -90,12 +90,15 @@ if __name__ == "__main__":
     #creo un parcheggio
     parcheggio = Parcheggio()
     print(parcheggio)
+    print("")
     mezzo1 = Auto("ER456YH")
-    print(parcheggio.parcheggiaVeicolo(mezzo1))
-    mezzo2 = Moto("TY765UH")
-    print(parcheggio.parcheggiaVeicolo(mezzo2))
-    print(parcheggio.rimuoviVeicolo(mezzo1))
-    print(parcheggio)
+    print("aggiungo un veicolo all'interno del parcheggio", parcheggio.parcheggiaVeicolo(mezzo1))
+    mezzo2 = Auto("TY678HO")
+    print("aggiungo un altro veicolo all'interno del parcheggio", parcheggio.parcheggiaVeicolo(mezzo2))
+    mezzo3 = Moto("TY765UH")
+    print("aggiungo un terzo veicolo all'interno del parcheggio", parcheggio.parcheggiaVeicolo(mezzo3))
+    print("rimuovo il primo veicolo che ho aggiunto all'interno del parcheggio:", parcheggio.rimuoviVeicolo(mezzo1))
+    print("ora nel percheggio i mezzi rimasti sono", parcheggio)
     
     
     

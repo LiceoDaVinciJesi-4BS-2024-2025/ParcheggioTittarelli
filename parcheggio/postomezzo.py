@@ -6,8 +6,8 @@ alfabetoMaiuscolo = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 cifre = "1234567890"
 import datetime
 
-#Definire la classe PostoMezzo, che permette di parcheggiare un mezzo specifico, ad esempio un Auto, oppure una Moto, oppure un Autobus e un Camion.
-#Definire in esso se è libero oppure occupato, la targa del mezzo che lo occupa, la data/ora di termine occupazione
+#Definisco la classe PostoMezzo, che permette di parcheggiare un mezzo specifico, ad esempio un Auto, oppure una Moto
+#Definisco in esso se è libero oppure occupato, la targa del mezzo che lo occupa, la data/ora di termine occupazione
 class PostoMezzo:
     def __init__(self, targaPresente : str, dataTermineOccupazione : datetime.datetime):
         """
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     print("la targa da inserire è:", targaDaInserire1)
     print(postomezzo1.parcheggio(targaDaInserire1))
     #
-    targaDaInserire2 = "WE456WE"
+    targaDaInserire2 = "RE346WE"
     print("la targa da inserire è:", targaPresente)
     print(postomezzo1.parcheggio(targaDaInserire2))
     

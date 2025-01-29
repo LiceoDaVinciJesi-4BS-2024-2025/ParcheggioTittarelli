@@ -9,7 +9,6 @@ from veicolo import *
 from auto import *
 from moto import *
 
-
 class Parcheggio:
     def __init__(self): #Un parcheggio può contenere fino a 1000 auto, 200 moto
         """
@@ -37,7 +36,7 @@ class Parcheggio:
         return __class__.__name__ + str(self.__dict__)
     
     def parcheggiaVeicolo(self, mezzo:Veicolo):
-        if isinstance(mezzo, Auto):
+        if isinstance(mezzo, Auto):#controlla che il mezzo sia della classe auto
             if len(self.__auto) >= self.MAX_AUTO:
                 return False # impossibile parcheggiare, posto occupato
             
@@ -86,3 +85,16 @@ class Parcheggio:
 #Tutte queste info vanno salvate nel file park.data (un comunissimo file di testo) nella stessa cartella dello script corrente.
 # • Al momento del caricamento dei dati, se il file park.data è presente, la situazione del
 # parcheggio va ripristinata allo stato descritto nel file.
+
+#--------------------------------------------------------------------------------
+if __name__ == "__main__":
+    mezzo1 = Veicolo("AS123DE")
+    print(mezzo1.parcheggiaVeicolo("AB123CD"))
+    
+    mezzo2 = Parcheggio()
+    print(mezzo2.parcheggiaVeicolo("AO987LM"))
+    
+    mezzo3 = Parcheggio()
+    print(mezzo3.rimuoviVeicolo("TW678OK"))
+    
+    

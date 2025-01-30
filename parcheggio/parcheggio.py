@@ -19,6 +19,8 @@ class Parcheggio:
         self.__moto = []
         self.MAX_AUTO = 1000
         self.MAX_MOTO = 200
+
+        self.__soldiIntascati = 0
             
     @property
     def auto(self):
@@ -60,7 +62,11 @@ class Parcheggio:
             for posto in self.__auto:
                 if posto.targaPresente == targaDaCercare:
                     self.__auto.remove(posto)
-                    return True
+                    diff = datetime.datetime.now() - posto.dataInizioOccupazione
+                    ore = diff.total_seconds() / 3600
+                    tot = ore * 1.5
+                    self.__soldiIntascati += tot
+                    return tot
                 
         # qui lo faccio per le moto
         if isinstance(mezzo, Moto):
@@ -69,6 +75,7 @@ class Parcheggio:
                 if posto.targaPresente == targaDaCercareM:
                     self.__moto.remove(posto)
                     return True
+        return 0
  
 #--------------------------------------------------------------------------------
 if __name__ == "__main__":

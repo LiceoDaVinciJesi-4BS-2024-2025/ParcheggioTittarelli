@@ -19,7 +19,7 @@ class Moto(Veicolo):
         return self.__numeroMaxPasseggeri
     
     @numeroMaxPasseggeri.setter
-    def numeroMaxPasseggeri(self, numero : int):
+    def numeroMaxPasseggeri(self, numero : 2):
         """
         imposta il numero massimo di passeggeri
         """
@@ -59,5 +59,4 @@ if __name__ == "__main__":
     
     moto.numeroPersoneTrasportate = 1
     print("numero di persone trasportate:", moto.numeroPersoneTrasportate)
-    
     

@@ -60,4 +60,3 @@ if __name__ == "__main__":
     auto1.numeroPersoneTrasportate= 1
     print("numero di persone trasportate:", auto1.numeroPersoneTrasportate)
         
-

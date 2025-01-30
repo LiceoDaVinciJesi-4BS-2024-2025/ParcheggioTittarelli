@@ -70,21 +70,6 @@ class Parcheggio:
                     self.__moto.remove(posto)
                     return True
  
-#Definire un sistema di prenotazione per i posteggi dei veicoli in modo tale che:
-# • si possa sapere in ogni istante quanti posti sono liberi per ogni tipo di veicolo
-# • al momento dell’arrivo del veicolo si possa prenotare un posto indicando il tipo di veicolo,
-# la targa e il numero di ore di sosta e quindi saldare quanto dovuto.
-# • Si mantenga il conto del guadagno totale del parcheggio, considerando la seguente tabella:
-# Auto 1.5 €/h
-# Moto 1.2 €/h
-# Camion 1.8 €/h
-# Autobus 2.4 €/h
-# • A volontà del gestore dell’applicazione si possa salvare lo stato attuale del parcheggio su un opportuno file di testo.
-#Lo stato attuale del parcheggio è descritto dai veicoli in sosta in questo momento e dal totale del guadagno raggiunto.
-#Tutte queste info vanno salvate nel file park.data (un comunissimo file di testo) nella stessa cartella dello script corrente.
-# • Al momento del caricamento dei dati, se il file park.data è presente, la situazione del
-# parcheggio va ripristinata allo stato descritto nel file.
-
 #--------------------------------------------------------------------------------
 if __name__ == "__main__":
     #creo un parcheggio
@@ -99,6 +84,4 @@ if __name__ == "__main__":
     print("aggiungo un terzo veicolo all'interno del parcheggio", parcheggio.parcheggiaVeicolo(mezzo3))
     print("rimuovo il primo veicolo che ho aggiunto all'interno del parcheggio:", parcheggio.rimuoviVeicolo(mezzo1))
     print("ora nel percheggio i mezzi rimasti sono", parcheggio)
-    
-    
     

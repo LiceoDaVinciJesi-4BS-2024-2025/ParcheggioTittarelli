@@ -40,13 +40,23 @@ class PostoMezzo:
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
     
-    def parcheggio(self, targaDaInserire : str):
+    def parcheggio(self):
         """
         dice se il parcheggio è libero o meno
         """
-        if self.__targaPresente != "":
+        if self.__targaPresente == "":
+            return "Il posto è vuoto"
+        else:
             return "il posto è occupato da :", self.__targaPresente, "è termina alle:",  self.__dataTermineOccupazione
-        return "posto libero"
+    
+    def libera(self):
+        """
+        libera il parcheggio
+        
+        """
+        self.__dataTermineOccupazione = ""
+        self.__targaPresente = ""
+        return "il posto è vuoto"
 #---------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     #
@@ -56,11 +66,8 @@ if __name__ == "__main__":
     print(postomezzo1)
 
     #
-    targaDaInserire1 = "WE456RE"
-    print("la targa da inserire è:", targaDaInserire1)
-    print(postomezzo1.parcheggio(targaDaInserire1))
+    print(postomezzo1.parcheggio())
     #
-    targaDaInserire2 = "RE346WE"
-    print("la targa da inserire è:", targaPresente)
-    print(postomezzo1.parcheggio(targaDaInserire2))
+    print(postomezzo1.libera())
+    print(postomezzo1)
     

@@ -9,12 +9,12 @@ import datetime
 #Definisco la classe PostoMezzo, che permette di parcheggiare un mezzo specifico, ad esempio un Auto, oppure una Moto
 #Definisco in esso se è libero oppure occupato, la targa del mezzo che lo occupa, la data/ora di termine occupazione
 class PostoMezzo:
-    def __init__(self, targaPresente : str, dataTermineOccupazione : datetime.datetime):
+    def __init__(self, targaPresente : str, dataInizioOccupazione : datetime.datetime):
         """
         inizializza la funzione
         """
         self.__targaPresente = targaPresente
-        self.__dataTermineOccupazione = dataTermineOccupazione
+        self.__dataInizioOccupazione = dataInizioOccupazione
    
 #         #controlla la targa
 #         if len(targaPresente) != 7:
@@ -29,8 +29,8 @@ class PostoMezzo:
         return self.__targaPresente
     
     @property
-    def dataTermineOccupazione(self):
-        return self.__dataTermineOccupazione
+    def dataInizioOccupazione(self):
+        return self.__dataInizioOccupazione
     
     #ritorna una stringa  con le variabili
     def __str__(self):
@@ -47,16 +47,9 @@ class PostoMezzo:
         if self.__targaPresente == "":
             return "Il posto è vuoto"
         else:
-            return "il posto è occupato da :", self.__targaPresente, "è termina alle:",  self.__dataTermineOccupazione
+            return "il posto è occupato da :", self.__targaPresente, "dalle:",  self.__dataInizioOccupazione
     
-    def libera(self):
-        """
-        libera il parcheggio
-        
-        """
-        self.__dataTermineOccupazione = ""
-        self.__targaPresente = ""
-        return "il posto è vuoto"
+
 #---------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     #

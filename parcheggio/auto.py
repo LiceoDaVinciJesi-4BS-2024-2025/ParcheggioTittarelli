@@ -21,16 +21,6 @@ class Auto(Veicolo):
     def numeroMaxPasseggeri(self):
         return self.__numeroMaxPasseggeri
     
-#     @numeroMaxPasseggeri.setter
-#     def numeroMaxPasseggeri(self, numero : int):
-#         """
-#         imposta il numero massimo di passeggeri
-#         """
-#         if numero <= 0:
-#             raise ValueError("impossibile!, controlla il numero di passeggeri inserito")
-#         self.__numeroMaxPasseggeri = numero
-#         return
-    
     @property
     def numeroPersoneTrasportate(self):
         return self.__numeroPersoneTrasportate

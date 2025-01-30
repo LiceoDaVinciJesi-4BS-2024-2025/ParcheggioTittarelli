@@ -15,14 +15,6 @@ class PostoMezzo:
         """
         self.__targaPresente = targaPresente
         self.__dataInizioOccupazione = dataInizioOccupazione
-   
-#         #controlla la targa
-#         if len(targaPresente) != 7:
-#             raise ValueError("impossibile, targa non accettabile!")
-#         if targaPresente[0] in alfabetoMaiuscolo and targaPresente[1] in alfabetoMaiuscolo and targaPresente[5] in alfabetoMaiuscolo and targaPresente[6] in alfabetoMaiuscolo and targaPresente[2] in cifre and targaPresente[3] in cifre and targaPresente[4] in cifre:
-#             self.__targaPresente= targaPresente
-#         else:
-#             raise ValueError("Targa fatta male, controllala!")
     
     @property
     def targaPresente(self):

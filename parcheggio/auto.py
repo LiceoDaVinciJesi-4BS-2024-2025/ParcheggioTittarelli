@@ -13,6 +13,9 @@ class Auto(Veicolo):
         inizializza la funzione
         """
         super().__init__(targa)
+
+        self.__numeroMaxPasseggeri = 5
+        self.__numeroPersoneTrasportate = 0
        
     @property
     def numeroMaxPasseggeri(self):

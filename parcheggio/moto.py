@@ -13,21 +13,25 @@ class Moto(Veicolo):
         inizializza la funzione
         """
         super().__init__(targa)
+        
+        self.__numeroMaxPasseggeri = 2
+        self.__numeroPersoneTrasportate = 0
+        
     
     @property
     def numeroMaxPasseggeri(self):
         return self.__numeroMaxPasseggeri
     
-    @numeroMaxPasseggeri.setter
-    def numeroMaxPasseggeri(self, numero : 2):
-        """
-        imposta il numero massimo di passeggeri
-        """
-        if numero <= 0:
-            raise ValueError("impossibile!, controlla il numero di passeggeri inserito")
-        self.__numeroMaxPasseggeri = numero
-        return
-    
+#     @numeroMaxPasseggeri.setter
+#     def numeroMaxPasseggeri(self, numero : 2):
+#         """
+#         imposta il numero massimo di passeggeri
+#         """
+#         if numero <= 0:
+#             raise ValueError("impossibile!, controlla il numero di passeggeri inserito")
+#         self.__numeroMaxPasseggeri = numero
+#         return
+#     
     @property
     def numeroPersoneTrasportate(self):
         return self.__numeroPersoneTrasportate

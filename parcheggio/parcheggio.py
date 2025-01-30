@@ -20,7 +20,11 @@ class Parcheggio:
         self.MAX_AUTO = 1000
         self.MAX_MOTO = 200
 
-        self.__soldiIntascati = 0
+        self.__guadagno = 0
+        
+    @property
+    def guadagno(self):
+        return self.__guadagno
             
     @property
     def auto(self):
@@ -62,10 +66,11 @@ class Parcheggio:
             for posto in self.__auto:
                 if posto.targaPresente == targaDaCercare:
                     self.__auto.remove(posto)
+                    #soldi guadagnati
                     diff = datetime.datetime.now() - posto.dataInizioOccupazione
                     ore = diff.total_seconds() / 3600
                     tot = ore * 1.5
-                    self.__soldiIntascati += tot
+                    self.__guadagno += tot
                     return tot
                 
         # qui lo faccio per le moto
@@ -74,7 +79,12 @@ class Parcheggio:
             for posto in self.__moto:
                 if posto.targaPresente == targaDaCercareM:
                     self.__moto.remove(posto)
-                    return True
+                    #soldi guadagnati
+                    diff = datetime.datetime.now() - posto.dataInizioOccupazione
+                    ore = diff.total_seconds() / 3600
+                    tot = ore * 1.2
+                    self.__guadagno += tot
+                    return tot
         return 0
  
 #--------------------------------------------------------------------------------

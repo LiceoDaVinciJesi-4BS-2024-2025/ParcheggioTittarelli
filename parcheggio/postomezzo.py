@@ -54,13 +54,12 @@ class PostoMezzo:
 if __name__ == "__main__":
     #
     targaPresente = "WE456WE"
-    dataTermineOccupazione = (2025, 11, 6, 21, 12, 00)
-    postomezzo1 = PostoMezzo(targaPresente, dataTermineOccupazione)
+    dataInizioOccupazione = (2025, 11, 6, 21, 12, 00)
+    postomezzo1 = PostoMezzo(targaPresente, dataInizioOccupazione)
     print(postomezzo1)
 
     #
     print(postomezzo1.parcheggio())
     #
-    print(postomezzo1.libera())
     print(postomezzo1)
     
